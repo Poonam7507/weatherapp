@@ -17,10 +17,12 @@ export default function Maincontent() {
 
     return (
         <>
+        <div className='frame'>
         <div className='box'>
              <div className='searchbox'>
         <input type="search" 
         placeholder='search city' 
+        value={search}
        onChange={(event)=>{
             setSearch(event.target.value);
        }}
@@ -31,13 +33,13 @@ export default function Maincontent() {
             <div>
             <div className='info'>
             <h1>{search}</h1>
-            <h2>Date</h2>
+            {/* <h2>Date.toLocaleString()</h2> */}
             <h2>time</h2>
             <h1 className='temp'>
-                 {city.temp}
+                 {city.temp}°C
             </h1>
             <h2 className='temp_min_max'>
-                1.2
+                Min:{city.temp_min}°C | Max:{city.temp_max}°C
             </h2>
             
 
@@ -46,6 +48,7 @@ export default function Maincontent() {
         )}
         
            
+        </div>
         </div>
         </>
     )
