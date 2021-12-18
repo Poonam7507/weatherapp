@@ -3,9 +3,31 @@
     border: 2px solid grey;
     width:35%;
     margin: auto;
-    background:linear-gradient(to right,white,purple,white);
     box-shadow: 2px 2px 4px 3px grey;
     border-radius: 20px;
     padding: 3%;
-    margin-top: 5%;
+    /* margin-top: 5%; */
+}
+
+input{
+    font-size: 2vw;
+}
+.default{
+    font-size: 1.5vw;
+}
+.city{
+    font-size: 2vw;
+}
+.datetime{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2vw;
+}
+
+.temp{
+    font-size: 1.9vw;
+}
+.temp_min_max{
+    font-size: 1.6vw;
+
 }
