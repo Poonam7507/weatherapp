@@ -18,7 +18,7 @@ export default function Maincontent() {
     
     useEffect(()=>{
         const fetchApi =async()=>{
-            const url=`http://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=73e34ea10bd489108a8939768a315b8f`
+            const url=`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=73e34ea10bd489108a8939768a315b8f`
             const response = await fetch(url);
             const wait=await response.json();
             // console.log(resjson);
