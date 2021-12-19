@@ -30,7 +30,6 @@ export default function Maincontent() {
     return (
         <>
         <div className='frame'>
-       {/* <img src={img} /> */}
         <div className='box' style={{
            backgroundImage:`url(${img})`
         }

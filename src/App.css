@@ -10,7 +10,7 @@
 
 .App-header {
   padding-top: 45px;
-  background-color: #282c34;
+  background:linear-gradient(to right bottom,pink,blue,white );
    min-height: 100vh;
  
 }

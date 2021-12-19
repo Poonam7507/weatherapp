@@ -1,12 +1,16 @@
 
 .box{
-    border: 2px solid grey;
-    width:35%;
+    /* max-height: 50vh; */
+    margin-top: 5%;
+
+    width:40%;
+    height: 70%;
     margin: auto;
-    box-shadow: 2px 2px 4px 3px grey;
+    box-shadow: 2px 2px 3px 5px white;
     border-radius: 20px;
     padding: 3%;
     /* margin-top: 5%; */
+    text-shadow: 0.2vw 0.2vw 0.1vw white;
 }
 
 input{
@@ -30,4 +34,30 @@ input{
 .temp_min_max{
     font-size: 1.6vw;
 
+}
+
+@media screen and (max-width: 810px) {
+    .box{
+        margin-top: 5%;
+        height: 300px;
+        width: 50%;
+        font-size: 10vw;
+        padding: 4%;
+    }
+}
+@media screen and (max-width: 611px) {
+    .box{
+        height: 250px;
+        width: 50%;
+        font-size: 8vw;
+        padding: 4%;
+    }
+}
+@media screen and (max-width: 390px) {
+    .box{
+        height: 200px;
+        width: 50%;
+        font-size: 19vw;
+        padding: 3%;
+    }
 }
