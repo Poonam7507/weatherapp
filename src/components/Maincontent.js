@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import img from '../assets/img1.jpg';
+import {getData} from '../services/UserService';
+import img from '../assets/img2.jpg';
 import '../css/StyleMain.css';
 
 
 export default function Maincontent() {
+    const [search, setSearch] = useState("");
     const [city, setCity] = useState(null);
-    const [search, setSearch] = useState("Pune");
+    const[weather,setWeather]=useState(null);
     const result=search.toUpperCase();
     const months= ["January","February","March","April","May","June","July",
             "August","September","October","November","December"];
@@ -13,20 +15,27 @@ export default function Maincontent() {
     const displayFullDate=showDate.getDate() + '-' + months[showDate.getMonth()] + '-'+ showDate.getFullYear();
     const showTime=new Date();
     const displayFullTime=showTime.toLocaleTimeString();
-
-       
+    
     
     useEffect(()=>{
-        const fetchApi =async()=>{
-            const url=`https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=73e34ea10bd489108a8939768a315b8f`
-            const response = await fetch(url);
-            const wait=await response.json();
-            // console.log(resjson);
-            setCity(wait.main);
+            
+const getReport = async () =>
+     {
+        try {
+            const response = await getData(search);
+            console.log(response);
+            setCity(response);
+            setWeather(response);
+            return response;
+        } catch (error) {
+            console.error(error);
+            
+            setWeather("");
+            
         }
-        fetchApi();
-    },[search])
-   
+    }
+    getReport();
+},[search])
     return (
         <>
         <div className='frame'>
@@ -43,12 +52,10 @@ export default function Maincontent() {
             setSearch(event.target.value);
        }}
         />
-            
+          
         </div>
-        {!city ?(<p className='default'>Data Not Found</p>):(
+        {!weather?(<p className='default'>Data Not Found</p>):(
             <div>
-            <div className='info'>
-            <h1 className='city'>{result}</h1>
             <div className='datetime'>
             <div><h2 className='date'>
                    {displayFullDate} 
@@ -57,17 +64,20 @@ export default function Maincontent() {
                    {displayFullTime} 
             </h2></div>
             </div>
+            <div className='info'>
+            <h1 className='city'>{result}</h1>
             <h1 className='temp'>
-                Temp: {city.temp}°C
+                Temp: {(city.main.temp-273.15).toFixed(1)}°C
             </h1>
             <h2 className='temp_min_max'>
-                Min:{city.temp_min}°C | Max:{city.temp_max}°C
+                Min:{(city.main.temp_min-273.15).toFixed(1)}°C | Max:{(city.main.temp_max-273.15).toFixed(1)}°C
             </h2>
             
 
             </div>
             </div>
-        )}
+        )
+        }
         
        
            

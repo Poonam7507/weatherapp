@@ -1,12 +1,11 @@
 
 .box{
-    /* max-height: 50vh; */
-    margin-top: 5%;
+    margin-top: 12%;
 
     width:40%;
     height: 70%;
     margin: auto;
-    box-shadow: 2px 2px 3px 5px white;
+    box-shadow: 0px 0.40vw 0.40vw 0.40vw #f7f2f2e5;
     border-radius: 20px;
     padding: 3%;
     /* margin-top: 5%; */
@@ -15,25 +14,70 @@
 
 input{
     font-size: 2vw;
+    border-radius: 12px;
+    box-shadow: 0px 0.40vw 0.40vw 0.40vw rgb(2 2 2 / 43%);
+    
 }
 .default{
     font-size: 1.5vw;
+    box-shadow: 0px 0.40vw 0.40vw 0.40vw rgb(2 2 2 / 43%);
+    
+}
+.city,.temp,.temp_min_max{
+    border-radius: 20%;
+    
+    
 }
 .city{
+    box-shadow: 0px 0.40vw 0.40vw 0.10vw rgb(2 2 2 / 43%);
+    color:rgb(176, 11, 247);
+
+    margin-top: 10%;
     font-size: 2vw;
 }
+
+@keyframes zoom {
+    0%{
+        transform: scale(1.2);
+    }
+    40%{
+        transform: scale(1.4);
+    }
+    80%{
+        transform: scale(1.6);
+        
+    }
+    100%{
+        transform: scale(1);
+    }
+}
 .datetime{
+    padding: 2%;
+    margin-top: 3%;
     display: flex;
     justify-content: space-between;
-    font-size: 1.2vw;
+    font-size: 1vw;
+    
 }
-
+.date{
+    box-shadow: 0px 0.40vw 0.40vw 0.40vw rgb(2 2 2 / 43%);
+    border-radius: 35%;
+    
+}
+.time{
+    box-shadow: 0px 0.40vw 0.40vw 0.40vw rgb(2 2 2 / 43%);
+    border-radius: 35%;
+}
 .temp{
     font-size: 1.9vw;
+    animation: zoom 1.2s ease-in 0s infinite forwards ;
+    
+    
 }
 .temp_min_max{
     font-size: 1.6vw;
 
+   
 }
 
 @media screen and (max-width: 810px) {
@@ -41,23 +85,42 @@ input{
         margin-top: 5%;
         height: 300px;
         width: 50%;
-        font-size: 10vw;
-        padding: 4%;
+        /* font-size: 10vw; */
+        padding: 3%;
+    }
+    .city,.temp,.temp_min_max{
+        margin-top: 8%;
     }
 }
 @media screen and (max-width: 611px) {
     .box{
         height: 250px;
         width: 50%;
-        font-size: 8vw;
+        /* font-size: 8vw; */
         padding: 4%;
+    }
+    .datetime{
+        font-size: 1.6vw;
+    }
+    .city{
+        margin-top: 10%;
+    }
+    .input,.city,.temp,.temp_min_max{
+        font-size: 3vw;
     }
 }
 @media screen and (max-width: 390px) {
     .box{
         height: 200px;
         width: 50%;
-        font-size: 19vw;
+        /* font-size: 19vw; */
         padding: 3%;
+    }
+    .city{
+        margin-top: 10%;
+    }
+    
+    .input,.city,.temp,.temp_min_max{
+        font-size: 3vw;
     }
 }
