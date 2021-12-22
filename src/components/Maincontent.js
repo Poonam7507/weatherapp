@@ -39,11 +39,13 @@ const getReport = async () =>
     return (
         <>
         <div className='frame'>
-        <div className='box' style={{
+        <div className='box' 
+        style={{
            backgroundImage:`url(${img})`
         }
           
-        } >
+        } 
+        >
              <div className='searchbox'>
         <input type="search" 
         placeholder='search city' 
